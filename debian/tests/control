@@ -1,0 +1,11 @@
+Tests:
+ upstream-tests
+Depends:
+ mkdocs-material,
+ python3-all,
+ python3-bs4,
+ python3-markdown,
+ python3-pymdownx,
+ python3-pytest,
+ @,
+Restrictions: allow-stderr

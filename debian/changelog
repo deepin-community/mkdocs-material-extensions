@@ -1,5 +1,62 @@
-template-repository (1.0-1) unstable; urgency=medium
+mkdocs-material-extensions (1.3.1-1) unstable; urgency=medium
 
-  * Initial release
+  * [bf2f2fd] d/watch: Add compression type gz
+  * [55efcbf] New upstream version 1.3.1
+  * [da6e6f2] Rebuild patch queue from patch-queue branch
+    Refresh the existing patches.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Thu, 23 Nov 2023 11:58:33 +0000
+
+mkdocs-material-extensions (1.1.1-2) unstable; urgency=medium
+
+  * [7411a53] d/control: Drop mkdocs-material as an direct dependency
+  * [c48f6e6] d/{tests/,}control: Add missing package to run tests
+    (Closes: #1052739)
+  * [20dae49] d/control: Update Standards-Version to 4.6.2
+    No further changes needed.
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sun, 22 Oct 2023 10:09:40 +0200
+
+mkdocs-material-extensions (1.1.1-1) unstable; urgency=medium
+
+  * [fee4ab5] New upstream version 1.1.1
+  * [2f9a9fd] Rebuild patch queue from patch-queue branch
+    Adjusted patch:
+    Ignore-inclusion-of-module-material.patch
+  * [7b6f44b] d/control: Update build dependencies
+    Upstream has moved to hatchling and dropped setuptools.
+  * [a0128c8] d/rules: Adjust PYBUILD variables
+  * [f82af4e] autopkgtest: Add python3-all to the dependencies
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sat, 26 Nov 2022 18:46:03 +0100
+
+mkdocs-material-extensions (1.0.3-2) unstable; urgency=medium
+
+  * [a94604f] Adding patch queue from patch-queue branch
+    Added patches:
+    Ignore-inclusion-of-module-material.patch
+    Ignore-parts-of-emoji-tests.patch
+  * [8e43000] d/control: Add setuptools to Build-Depends
+    (Closes: #1020061)
+  * [a3bfe39] d/control: Update Standards-Version to 4.6.1
+    No further changes needed.
+  * [3b3790a] dh_auto_test: Enable and get internal test suite running
+  * [2aecbfc] autopkgtest: Adding a first setup
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sat, 24 Sep 2022 09:00:00 +0200
+
+mkdocs-material-extensions (1.0.3-1) unstable; urgency=medium
+
+  * Upload to unstable
+  * [7867e23] d/control: Add B-D for using poetry and pyproject
+  * [8e6a067] d/rules: Use pyproject to build package
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sun, 27 Feb 2022 16:49:53 +0100
+
+mkdocs-material-extensions (1.0.3-1~exp1) experimental; urgency=medium
+
+  * [8fe09c5] New upstream version 1.0.3
+  * [4fd25a3] First and basic Debianization
+    (Closes: #1002633)
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sun, 26 Dec 2021 14:26:42 +0100

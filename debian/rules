@@ -1,4 +1,10 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+#export DH_VERBOSE = 1
+
+export PYBUILD_NAME=materialx
+export PYBUILD_AFTER_INSTALL=rm -rf {destdir}/usr/lib/python*/dist-packages/mkdocs_material_extensions-*.dist-info/licenses
 
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
