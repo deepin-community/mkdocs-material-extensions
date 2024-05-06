@@ -1,15 +1,41 @@
-Source: template-repository
-Section: unknown
+Source: mkdocs-material-extensions
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders:
+ Carsten Schoenert <c.schoenert@t-online.de>,
+Section: python
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends:
+ debhelper-compat (= 13),
+ python3-all,
+Build-Depends-Indep:
+ dh-sequence-python3,
+ mkdocs-material,
+ pybuild-plugin-pyproject,
+ python3-bs4 <!nocheck>,
+ python3-hatchling,
+ python3-markdown <!nocheck>, 
+ python3-pymdownx <!nocheck>,
+Rules-Requires-Root: no
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/python-team/packages/mkdocs-material-extensions
+Vcs-Git: https://salsa.debian.org/python-team/packages/mkdocs-material-extensions.git
+Homepage: https://github.com/facelessuser/mkdocs-material-extensions
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: mkdocs-material-extensions
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+Description: Markdown extension resources for MkDocs for Material
+ This package is an extension pack for Python Markdown.
+ .
+ MkDocs Material provides numerous icons from Material, FontAwesome, and
+ Octicons, but it does so by inlining the SVG icons into the source.
+ Currently there is no easy way access these icons and arbitrarily insert
+ them into Markdown content. Users must include the icon fonts themselves
+ and do it with HTML.
+ .
+ This module allows you to use PyMdown Extensions' Emoji extension to enable
+ easy insertion of MkDocs Material's SVG assets using simple :emoji-syntax:.
+ This is done by creating a own emoji index and emoji generator. The custom
+ index provides a modified version of the Emoji extensions Twemoji index.

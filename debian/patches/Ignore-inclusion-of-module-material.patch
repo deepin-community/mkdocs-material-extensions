@@ -1,0 +1,51 @@
+From: Carsten Schoenert <c.schoenert@t-online.de>
+Date: Sat, 24 Sep 2022 07:54:58 +0200
+Subject: Ignore inclusion of module material
+
+There is right now no Python package that is providing a module
+material, ignoring for now.
+
+Forwarded: https://github.com/facelessuser/mkdocs-material-extensions/issues/18
+---
+ materialx/emoji.py | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/materialx/emoji.py b/materialx/emoji.py
+index c0ceb71..d7de724 100644
+--- a/materialx/emoji.py
++++ b/materialx/emoji.py
+@@ -9,7 +9,7 @@ import copy
+ import codecs
+ import functools
+ import inspect
+-import material
++#import material
+ import pymdownx
+ from pymdownx.emoji import TWEMOJI_SVG_CDN, add_attriubtes
+ import xml.etree.ElementTree as etree  # noqa: N813
+@@ -37,11 +37,11 @@ supported moving forward. This is the last release.
+ 
+ 
+ OPTION_SUPPORT = pymdownx.__version_info__ >= (7, 1, 0)
+-RESOURCES = os.path.dirname(inspect.getfile(material))
+-if os.path.exists(os.path.join(RESOURCES, 'templates', '.icons')):  # pragma: no cover
+-    RES_PATH = os.path.join(RESOURCES, 'templates', '.icons')
+-else:  # pragma: no cover
+-    RES_PATH = os.path.join(RESOURCES, '.icons')
++# RESOURCES = os.path.dirname(inspect.getfile(material))
++# if os.path.exists(os.path.join(RESOURCES, 'templates', '.icons')):  # pragma: no cover
++#     RES_PATH = os.path.join(RESOURCES, 'templates', '.icons')
++# else:  # pragma: no cover
++#     RES_PATH = os.path.join(RESOURCES, '.icons')
+ 
+ 
+ @functools.lru_cache(maxsize=None)
+@@ -85,7 +85,7 @@ def _patch_index(options):
+     """Patch the given index."""
+ 
+     icon_locations = options.get('custom_icons', [])[:]
+-    icon_locations.append(RES_PATH)
++    # icon_locations.append(RES_PATH)
+     return _patch_index_for_locations(tuple(icon_locations))
+ 
+ 

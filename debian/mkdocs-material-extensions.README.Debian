@@ -1,0 +1,12 @@
+Relationship of packages mkdocs-material-extension and mkdocs-material
+----------------------------------------------------------------------
+
+While starting to package packages mkdocs-material-extension a binary package
+dependency to mkdocs-material was set. The upstream project did drop this
+requirement in version 1.0.2.
+
+https://github.com/facelessuser/mkdocs-material-extensions/releases/tag/1.0.2
+
+To avoid a circular dependency the Debian package follow this removal too.
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Mon, 22 Oct 2023 10:05:00 +0200
